@@ -1,9 +1,9 @@
 <?php
 /**
  * Import Google Fonts and push them to GitHub
- * 
+ *
  * PHP version 5
- * 
+ *
  * @category GoogleFontsBower
  * @package  GoogleFontsBower
  * @author   Pierre Rudloff <contact@rudloff.pro>
@@ -26,6 +26,41 @@ print PHP_EOL;
 foreach ($importer->getFonts() as $font) {
     $dir_handle=opendir($font->dir);
     $repo = 'repos/'.$font->name.'/';
+
+    $github->authenticate($githubUser, $githubPass);
+
+    try {
+        print $importer->log($font, 'Creating repository on GitHub…');
+        $github->api('repo')
+            ->create($font->getRepoName(), null, null, true, $importer->baseRepoOrg);
+    } catch (Exception $e) {
+        if ($e->getCode() == 401) {
+            die('Wrong Github credentials!'.PHP_EOL);
+        } else if ($e->getCode() == 422) {
+            print $importer->log($font, 'Reusing existing repository');
+        }
+    }
+
+    print $importer->log($font, 'Updating local repository…');
+    $repository = Gitonomy\Git\Admin::init($repo, false);
+    try {
+        print $repository->run(
+            'remote', array('add', 'origin', $importer->getFontRepoUrl($font))
+        );
+    } catch (Exception $e) {
+        print $repository->run(
+            'remote', array('set-url', 'origin', $importer->getFontRepoUrl($font))
+        );
+    }
+
+    try {
+        print $importer->log(
+            $font, $repository->run('pull', array('origin', 'master'))
+        );
+    } catch (Exception $e) {
+        print $importer->log($font, 'Remote repository is empty');
+    }
+
     print $importer->log($font, 'Copying files in '.$repo.'…');
     if (!is_dir($repo)) {
         mkdir($repo);
@@ -36,7 +71,6 @@ foreach ($importer->getFonts() as $font) {
         }
     }
     closedir($dir_handle);
-    $repository = Gitonomy\Git\Admin::init($repo, false);
     print $repository->run('add', array('.'));
     try {
         print $importer->log($font, 'Committing new changes…');
@@ -49,29 +83,6 @@ foreach ($importer->getFonts() as $font) {
         );
     } catch (Exception $e) {
         print $importer->log($font, 'Nothing to commit');
-    }
-    try {
-        print $repository->run(
-            'remote', array('add', 'origin', $importer->getFontRepoUrl($font))
-        );
-    } catch (Exception $e) {
-        print $repository->run(
-            'remote', array('set-url', 'origin', $importer->getFontRepoUrl($font))
-        );
-    }
-
-    $github->authenticate($githubUser, $githubPass);
-
-    try {
-        print $importer->log($font, 'Creating repository on GitHub…'); 
-        $github->api('repo')
-            ->create($font->getRepoName(), null, null, true, $importer->baseRepoOrg);
-    } catch (Exception $e) {
-        if ($e->getCode() == 401) {
-            die('Wrong Github credentials!'.PHP_EOL);
-        } else if ($e->getCode() == 422) {
-            print $importer->log($font, 'Reusing existing repository');
-        }
     }
 
     print $importer->log(

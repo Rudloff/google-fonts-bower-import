@@ -26,13 +26,21 @@ require_once __DIR__.'/Font.php';
  * */
 class Importer
 {
-    public $fontsDir = __DIR__.'/../bower_components/google-fonts/';
+    public $fontsDir;
     public $fontsRepoUrl = 'git@github.com:google/fonts.git';
     public $baseRepoOrg = 'google-fonts-bower';
     public $baseRepoUrl = 'git@github.com:google-fonts-bower/';
     public $gitAuthor = 'Pierre Rudloff <contact@rudloff.pro>';
 
     private $_font;
+
+    /**
+     * Importer class constructor
+     */
+    function __construct()
+    {
+        $this->fontsDir = __DIR__.'/../bower_components/google-fonts/';
+    }
 
     /**
      * Get all fonts
