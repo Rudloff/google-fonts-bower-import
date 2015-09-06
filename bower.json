@@ -1,0 +1,6 @@
+{
+    "name": "google-fonts-import",
+    "dependencies": {
+        "google-fonts": "*"
+    }
+}

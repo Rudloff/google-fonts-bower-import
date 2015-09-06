@@ -1,0 +1,14 @@
+{
+    "name": "google-fonts-bower-import",
+    "description": "Tools used to convert Google Fonts to Bower packages",
+    "version": "0.1.0",
+    "dependencies": {
+        "grunt": "~0.4.5",
+        "grunt-phpcs": "~0.4.0",
+        "grunt-phpunit": "~0.3.6"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Rudloff/google-fonts-bower-import.git"
+    }
+}
