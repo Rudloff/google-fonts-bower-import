@@ -1,30 +1,14 @@
 <?php
-/**
- * FontTest class
- *
- * PHP version 5
- *
- * @category GoogleFontsBower
- * @package  GoogleFontsBower
- * @author   Pierre Rudloff <contact@rudloff.pro>
- * @license  GPL http://www.gnu.org/licenses/gpl.html
- * @link     https://github.com/google-fonts-bower
- * */
+namespace GoogleFontsBower\Test;
+
+use GoogleFontsBower\Font;
 
 /**
  * Test Font class
- *
- * PHP version 5
- *
- * @category GoogleFontsBower
- * @package  GoogleFontsBower
- * @author   Pierre Rudloff <contact@rudloff.pro>
- * @license  GPL http://www.gnu.org/licenses/gpl.html
- * @link     https://github.com/google-fonts-bower
- * */
-class FontTest extends PHPUnit_Framework_TestCase
+ */
+class FontTest extends \PHPUnit_Framework_TestCase
 {
-    private $_font;
+    private $font;
 
     /**
      * Set up tests
@@ -32,7 +16,7 @@ class FontTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->_font = new GoogleFontsBower\Font(
+        $this->font = new Font(
             __DIR__.'/../bower_components/google-fonts//apache/aclonica/'
         );
     }
@@ -43,7 +27,7 @@ class FontTest extends PHPUnit_Framework_TestCase
      */
     public function testGetRepoName()
     {
-        $this->assertEquals('aclonica-bower', $this->_font->getRepoName());
+        $this->assertEquals('aclonica-bower', $this->font->getRepoName());
     }
 
     /**
@@ -52,6 +36,6 @@ class FontTest extends PHPUnit_Framework_TestCase
      */
     public function testGetBowerName()
     {
-        $this->assertEquals('aclonica-googlefont', $this->_font->getBowerName());
+        $this->assertEquals('aclonica-googlefont', $this->font->getBowerName());
     }
 }

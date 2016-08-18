@@ -1,28 +1,9 @@
 <?php
-/**
- * Importer class
- *
- * PHP version 5
- *
- * @category GoogleFontsBower
- * @package  GoogleFontsBower
- * @author   Pierre Rudloff <contact@rudloff.pro>
- * @license  GPL http://www.gnu.org/licenses/gpl.html
- * @link     https://github.com/google-fonts-bower
- * */
 namespace GoogleFontsBower;
 
 /**
  * Manager fonts import
- *
- * PHP version 5
- *
- * @category GoogleFontsBower
- * @package  GoogleFontsBower
- * @author   Pierre Rudloff <contact@rudloff.pro>
- * @license  GPL http://www.gnu.org/licenses/gpl.html
- * @link     https://github.com/google-fonts-bower
- * */
+ */
 class Importer
 {
     public $fontsDir;
