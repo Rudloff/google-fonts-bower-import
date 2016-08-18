@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1c31184e85ce561cddfa62b212e7be12",
-    "content-hash": "c4558bdc7026353de854ad0446776b6d",
+    "hash": "e17581ddc3ecbdb55d5c0fb1db1eb094",
+    "content-hash": "883542bb77ff8b21cb8f1901b06175d7",
     "packages": [
         {
             "name": "gitonomy/gitlib",
@@ -60,6 +60,17 @@
             "description": "Library for accessing git",
             "homepage": "http://gitonomy.com",
             "time": "2015-12-01 22:25:57"
+        },
+        {
+            "name": "google/fonts",
+            "version": "dev-master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/google/fonts/archive/master.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
         },
         {
             "name": "guzzle/guzzle",
@@ -533,7 +544,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "google/fonts": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

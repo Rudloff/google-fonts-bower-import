@@ -17,7 +17,7 @@ class Importer
      */
     public function __construct()
     {
-        $this->fontsDir = __DIR__.'/../bower_components/google-fonts/';
+        $this->fontsDir = __DIR__.'/../vendor/google/fonts/';
     }
 
     /**
