@@ -7,16 +7,10 @@ $github = new \Github\Client();
 
 $importer = new GoogleFontsBower\Importer;
 
-$githubUser = readline('GitHub username: ');
-print 'GitHub password: ';
-$githubPass = preg_replace('/\r?\n$/', '', `stty -echo; head -n1 ; stty echo`);
-print PHP_EOL;
-
 foreach ($importer->getFonts() as $font) {
     $dir_handle=opendir($font->dir);
     $repo = 'repos/'.$font->name.'/';
-
-    $github->authenticate($githubUser, $githubPass);
+    $github->authenticate(trim(file_get_contents(__DIR__.'/token.txt')), \Github\Client::AUTH_HTTP_TOKEN);
 
     try {
         print $importer->log($font, 'Creating repository on GitHub…');
