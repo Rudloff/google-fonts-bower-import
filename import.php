@@ -27,6 +27,8 @@ foreach ($importer->getFonts() as $font) {
             die('Wrong Github credentials!'.PHP_EOL);
         } elseif ($e->getCode() == 422) {
             print $importer->log($font, 'Reusing existing repository');
+        } else {
+            die($e->getMessage().PHP_EOL);
         }
     }
 
