@@ -1,9 +1,12 @@
 {
-    "require": {
-        "gitonomy/gitlib": "~0.1.7",
-        "knplabs/github-api": "~1.4.14"
-    },
-    "name": "google-fonts-bower/import",
-    "description": "Tools used to convert Google Fonts to Bower packages",
-    "license": "GPL-3.0"
+	"require": {
+		"gitonomy/gitlib": "~0.1.7",
+		"knplabs/github-api": "~1.4.14"
+	},
+	"require-dev": {
+		"symfony/var-dumper": "~3.1.0"
+	},
+	"name": "google-fonts-bower/import",
+	"description": "Tools used to convert Google Fonts to Bower packages",
+	"license": "GPL-3.0"
 }
