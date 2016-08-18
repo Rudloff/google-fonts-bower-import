@@ -53,6 +53,7 @@ foreach ($importer->getFonts() as $font) {
     if (!is_dir($repo)) {
         mkdir($repo);
     }
+    array_map('unlink', glob($repo.'/*'));
     while ($file=readdir($dir_handle)) {
         if ($file!="." && $file!="..") {
             copy($font->dir.'/'.$file, $repo.$file);
