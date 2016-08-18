@@ -1,7 +1,7 @@
 {
 	"require": {
 		"gitonomy/gitlib": "~0.1.7",
-		"knplabs/github-api": "~1.4.14"
+		"knplabs/github-api": "~1.7.1"
 	},
 	"require-dev": {
 		"symfony/var-dumper": "~3.1.0",
