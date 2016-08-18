@@ -31,12 +31,10 @@ class Importer
     public $baseRepoUrl = 'git@github.com:google-fonts-bower/';
     public $gitAuthor = 'Pierre Rudloff <contact@rudloff.pro>';
 
-    private $_font;
-
     /**
      * Importer class constructor
      */
-    function __construct()
+    public function __construct()
     {
         $this->fontsDir = __DIR__.'/../bower_components/google-fonts/';
     }
@@ -45,7 +43,7 @@ class Importer
      * Get all fonts
      * @return Font[]
      */
-    function getFonts()
+    public function getFonts()
     {
         $fonts = array();
         foreach (glob($this->fontsDir.'/*/*/') as $fontdir) {
@@ -60,7 +58,7 @@ class Importer
      * @param string $msg  Message
      * @return string Log message
      */
-    function log($font, $msg)
+    public function log($font, $msg)
     {
         return '['.$font->name.'] '.$msg.PHP_EOL;
     }
@@ -70,7 +68,7 @@ class Importer
      * @param  Font $font Font
      * @return string URL
      */
-    function getFontRepoUrl($font)
+    public function getFontRepoUrl($font)
     {
         return $this->baseRepoUrl.$font->getRepoName($font).'.git';
     }

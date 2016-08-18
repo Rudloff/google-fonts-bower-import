@@ -29,7 +29,7 @@ class Font
      * Font class constructor
      * @param string $fontdir Font path
      */
-    function __construct($fontdir)
+    public function __construct($fontdir)
     {
         $this->dir = realpath($fontdir);
         $this->name = basename($fontdir);
@@ -39,7 +39,7 @@ class Font
      * Get repository name
      * @return string
      */
-    function getRepoName()
+    public function getRepoName()
     {
         return $this->name.'-bower';
     }
@@ -48,7 +48,7 @@ class Font
      * Get Bower pakckage name
      * @return string
      */
-    function getBowerName()
+    public function getBowerName()
     {
         return $this->name.'-googlefont';
     }
