@@ -1,6 +1,5 @@
 <?php
 require_once 'vendor/autoload.php';
-require_once 'classes/Importer.php';
 
 $importer = new GoogleFontsBower\Importer;
 

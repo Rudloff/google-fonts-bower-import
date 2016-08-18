@@ -9,5 +9,10 @@
 	},
 	"name": "google-fonts-bower/import",
 	"description": "Tools used to convert Google Fonts to Bower packages",
-	"license": "GPL-3.0"
+	"license": "GPL-3.0",
+	"autoload": {
+		"psr-4": {
+			"GoogleFontsBower\\": "classes/"
+		}
+	}
 }

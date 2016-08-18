@@ -11,7 +11,7 @@
  * @link     https://github.com/google-fonts-bower
  * */
 namespace GoogleFontsBower;
-require_once __DIR__.'/Font.php';
+
 /**
  * Manage fonts
  *

@@ -10,7 +10,7 @@
  * @license  GPL http://www.gnu.org/licenses/gpl.html
  * @link     https://github.com/google-fonts-bower
  * */
-require_once __DIR__.'/../classes/Font.php';
+
 /**
  * Test Font class
  *
