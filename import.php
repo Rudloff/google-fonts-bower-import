@@ -60,6 +60,8 @@ foreach ($importer->getFonts() as $font) {
         }
     }
     closedir($dir_handle);
+    print $importer->log($font, 'Generating bower.json…');
+    file_put_contents($repo.'/bower.json', $font->getBowerJson());
     print $repository->run('add', array('.'));
     try {
         print $importer->log($font, 'Committing new changes…');

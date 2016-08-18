@@ -2,7 +2,8 @@
 	"require": {
 		"gitonomy/gitlib": "~0.1.7",
 		"knplabs/github-api": "~1.7.1",
-		"google/fonts": "dev-master"
+		"google/fonts": "dev-master",
+		"symfony/yaml": "~3.0.0"
 	},
 	"require-dev": {
 		"symfony/var-dumper": "~3.1.0",
