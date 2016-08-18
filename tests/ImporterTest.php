@@ -20,7 +20,7 @@ class ImporterTest extends \PHPUnit_Framework_TestCase
     {
         $this->importer = new Importer();
         $this->font = new Font(
-            __DIR__.'/../bower_components/google-fonts//apache/aclonica/'
+            __DIR__.'/../vendor/google/fonts/apache/aclonica/'
         );
     }
 
