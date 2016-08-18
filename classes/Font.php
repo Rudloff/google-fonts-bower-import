@@ -59,6 +59,6 @@ class Font
             'description'=>$metadata['name'].' font',
             'keywords'=>array('font', $metadata['category'])
         );
-        return json_encode($bower, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+        return json_encode($bower, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES).PHP_EOL;
     }
 }
