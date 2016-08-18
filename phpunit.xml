@@ -1,4 +1,4 @@
-<phpunit>
+<phpunit bootstrap="vendor/autoload.php">
     <filter>
         <whitelist>
             <directory>classes/</directory>

@@ -1,24 +1,22 @@
-#google-fonts-bower-import
+# google-fonts-bower-import
 Tools used to convert Google Fonts to Bower packages
 
-##Setup
+## Setup
+```bash
+composer install
+```
 
-    composer install
-    bower install
-    npm install
+## Import fonts and push them to GitHub
+```bash
+php import.php
+```
 
+## Register Bower packages
+```bash
+php register.php
+```
 
-##Import fonts and push them to GitHub
-
-    php import.php
-
-
-##Register Bower packages
-
-    php register.php
-
-
-##Unit tests
-
-    grunt test
-
+## Unit tests
+```bash
+grunt test
+```
