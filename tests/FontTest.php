@@ -1,17 +1,19 @@
 <?php
+
 namespace GoogleFontsBower\Test;
 
 use GoogleFontsBower\Font;
 
 /**
- * Test Font class
+ * Test Font class.
  */
 class FontTest extends \PHPUnit_Framework_TestCase
 {
     private $font;
 
     /**
-     * Set up tests
+     * Set up tests.
+     *
      * @return void
      */
     protected function setUp()
@@ -22,7 +24,8 @@ class FontTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test getRepoName function
+     * Test getRepoName function.
+     *
      * @return void
      */
     public function testGetRepoName()
@@ -31,7 +34,8 @@ class FontTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test getBowerName function
+     * Test getBowerName function.
+     *
      * @return void
      */
     public function testGetBowerName()
