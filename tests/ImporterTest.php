@@ -1,11 +1,12 @@
 <?php
+
 namespace GoogleFontsBower\Test;
 
-use GoogleFontsBower\Importer;
 use GoogleFontsBower\Font;
+use GoogleFontsBower\Importer;
 
 /**
- * Test importer class
+ * Test importer class.
  */
 class ImporterTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +14,8 @@ class ImporterTest extends \PHPUnit_Framework_TestCase
     private $font;
 
     /**
-     * Set up tests
+     * Set up tests.
+     *
      * @return void
      */
     protected function setUp()
@@ -25,7 +27,8 @@ class ImporterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test getFonts function
+     * Test getFonts function.
+     *
      * @return void
      */
     public function testGetFonts()
@@ -35,7 +38,8 @@ class ImporterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test log function
+     * Test log function.
+     *
      * @return void
      */
     public function testLog()
@@ -47,7 +51,8 @@ class ImporterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test getFontRepoUrl function
+     * Test getFontRepoUrl function.
+     *
      * @return void
      */
     public function testGetFontRepoUrl()
