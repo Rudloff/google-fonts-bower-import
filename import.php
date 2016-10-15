@@ -1,7 +1,5 @@
 <?php
 
-use Gitonomy\Git\Repository;
-
 require_once __DIR__.'/vendor/autoload.php';
 
 $github = new \Github\Client();
