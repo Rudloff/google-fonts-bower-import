@@ -9,7 +9,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 class Font
 {
-    private $dir;
+    public $dir;
 
     public $name;
 
