@@ -8,6 +8,10 @@ use Symfony\Component\Yaml\Yaml;
  */
 class Font
 {
+    private $dir;
+
+    public $name;
+
     /**
      * Font class constructor
      * @param string $fontdir Font path
