@@ -15,8 +15,10 @@ foreach ($importer->getFonts() as $font) {
 
     try {
         echo $importer->log($font, 'Creating repository on GitHub…');
-        $github->api('repo')
-            ->create($font->getRepoName(), null, null, true, $importer->baseRepoOrg);
+        $api = $github->api('repo');
+        if ($api instanceof Github\Api\Repo) {
+            $api->create($font->getRepoName(), null, null, true, $importer->baseRepoOrg);
+        }
     } catch (Exception $e) {
         if ($e->getCode() == 401) {
             die('Wrong Github credentials!'.PHP_EOL);
