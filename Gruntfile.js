@@ -4,6 +4,9 @@ module.exports = function (grunt) {
     grunt.initConfig(
         {
             phpcs: {
+                options: {
+                    standard: 'PSR2'
+                },
                 php: {
                     src: ['*.php', 'classes/*.php']
                 },
