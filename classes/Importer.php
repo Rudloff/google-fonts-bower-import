@@ -51,6 +51,6 @@ class Importer
      */
     public function getFontRepoUrl($font)
     {
-        return $this->baseRepoUrl.$font->getRepoName($font).'.git';
+        return $this->baseRepoUrl.$font->getRepoName().'.git';
     }
 }
