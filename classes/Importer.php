@@ -1,8 +1,9 @@
 <?php
+
 namespace GoogleFontsBower;
 
 /**
- * Manager fonts import
+ * Manager fonts import.
  */
 class Importer
 {
@@ -13,7 +14,7 @@ class Importer
     public $gitAuthor = 'Pierre Rudloff <contact@rudloff.pro>';
 
     /**
-     * Importer class constructor
+     * Importer class constructor.
      */
     public function __construct()
     {
@@ -21,22 +22,26 @@ class Importer
     }
 
     /**
-     * Get all fonts
+     * Get all fonts.
+     *
      * @return Font[]
      */
     public function getFonts()
     {
-        $fonts = array();
+        $fonts = [];
         foreach (glob($this->fontsDir.'/*/*/') as $fontdir) {
             $fonts[] = new Font($fontdir);
         }
+
         return $fonts;
     }
 
     /**
-     * Generate log message
+     * Generate log message.
+     *
      * @param Font   $font Font mentioned in this message
      * @param string $msg  Message
+     *
      * @return string Log message
      */
     public function log($font, $msg)
@@ -45,8 +50,10 @@ class Importer
     }
 
     /**
-     * Get repository URL for this font
-     * @param  Font $font Font
+     * Get repository URL for this font.
+     *
+     * @param Font $font Font
+     *
      * @return string URL
      */
     public function getFontRepoUrl($font)
