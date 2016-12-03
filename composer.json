@@ -35,5 +35,8 @@
   "scripts": {
     "import": "php import.php",
     "register": "php register.php"
+  },
+  "config": {
+    "process-timeout": 0
   }
 }
