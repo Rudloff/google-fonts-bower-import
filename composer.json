@@ -31,5 +31,9 @@
         }
       }
     }
-  ]
+  ],
+  "scripts": {
+    "import": "php import.php",
+    "register": "php register.php"
+  }
 }
