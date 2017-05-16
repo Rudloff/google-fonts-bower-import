@@ -2,9 +2,21 @@
 
 require_once __DIR__.'/vendor/autoload.php';
 
+use Gitonomy\Git\Exception\ProcessException;
+
 $github = new \Github\Client();
 
 $importer = new GoogleFontsBower\Importer();
+
+$lock = json_decode(file_get_contents(__DIR__.'/composer.lock'));
+$package = array_shift(
+    array_filter(
+        $lock->packages,
+        function ($package) {
+            return $package->name == 'google/fonts';
+        }
+    )
+);
 
 foreach ($importer->getFonts() as $font) {
     $dir_handle = opendir($font->dir);
@@ -73,12 +85,23 @@ foreach ($importer->getFonts() as $font) {
                 '--author='.$importer->gitAuthor,
             ]
         );
-    } catch (Exception $e) {
+    } catch (ProcessException $e) {
         echo $importer->log($font, 'Nothing to commit');
+    }
+
+    try {
+        echo $importer->log($font, 'Tagging release…');
+        echo $repository->run('tag', ['upstream-'.$package->dist->reference]);
+    } catch (ProcessException $e) {
+        echo $importer->log($font, 'Tag already exists');
     }
 
     echo $importer->log(
         $font,
         $repository->run('push', ['--set-upstream', 'origin', 'master'])
+    );
+    $importer->log(
+        $font,
+        $repository->run('push', ['--tags'])
     );
 }

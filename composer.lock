@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b306bd27b8ae222dc56e0aff5e4b4a11",
+    "content-hash": "b703eae8530e8467bdc075673b6616f7",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -114,8 +114,8 @@
             "version": "dev-master",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/google/fonts/archive/master.zip",
-                "reference": null,
+                "url": "https://github.com/google/fonts/archive/34fb624ef6f7a31980df5609a2e16ca240a72f48.zip",
+                "reference": "34fb624ef6f7a31980df5609a2e16ca240a72f48",
                 "shasum": null
             },
             "type": "library"

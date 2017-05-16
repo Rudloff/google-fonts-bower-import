@@ -26,8 +26,9 @@
         "name": "google/fonts",
         "version": "dev-master",
         "dist": {
-          "url": "https://github.com/google/fonts/archive/master.zip",
-          "type": "zip"
+          "url": "https://github.com/google/fonts/archive/34fb624ef6f7a31980df5609a2e16ca240a72f48.zip",
+          "type": "zip",
+          "reference": "34fb624ef6f7a31980df5609a2e16ca240a72f48"
         }
       }
     }
